@@ -1,15 +1,43 @@
 import { useState } from "react";
 
-const JobFilter = () => {
-  // 1. Manage the open/hidden state of the filter form
+const JobFilter = ({ setFilterData }) => {
+    const formInitialState = {
+    title: "",
+    category: "",
+    country: "",
+    salary: "",
+    skills: "",
+  };
   const [isFilterOpen, setIsFilterOpen] = useState(true);
+  const [formData, setFormData] = useState(formInitialState);
 
-  return (
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormData(formData);
+     setFilterData(formData);
+  }
+
+  const handleClear = (e) => {
+    e.preventDefault();
+    setFormData(formInitialState);
+    setFilterData(formInitialState);
+  }
+ return (
     <div className="relative container-main bg-background w-full py-2">
-      <form className="sticky top-15 overflow-y-auto bg-white flex flex-col py-1 justify-center items-center px-4 space-y-1 max-w-xl mx-auto rounded-lg shadow-sm">
+      <form 
+      onSubmit={handleSubmit}
+      className="sticky top-15 overflow-y-auto bg-white flex flex-col py-1 justify-center items-center px-4 space-y-1 max-w-xl mx-auto rounded-lg shadow-sm">
         {/* Form Header */}
         <div
-          onClick={() => setIsFilterOpen(!isFilterOpen)}
+          
           className={`w-full flex items-center transition-all duration-300 ${
             isFilterOpen
               ? "flex-row justify-between py-2"
@@ -19,6 +47,7 @@ const JobFilter = () => {
           {/* Main heading acts as an interactive toggle button */}
           <button
             type="button"
+            onClick={() => setIsFilterOpen(!isFilterOpen)}
             className="text-[clamp(14px,2vw,16px)] whitespace-nowrap font-semibold text-gray-800 hover:text-orange-500 transition-colors focus:outline-none"
           >
             Search remote jobs
@@ -26,7 +55,8 @@ const JobFilter = () => {
 
           <button
             type="button"
-            className={`${!isFilterOpen ? "hidden" : ""} text-[clamp(12px,1.5vw,14px)] whitespace-nowrap py-1 md:px-1.5 primary-btn rounded-2xl border border-gray-300 hover:bg-gray-50 transition-colors`}
+            onClick={handleClear}
+            className={`${!isFilterOpen ? "hidden" : ""} text-[clamp(12px,1.5vw,14px)] whitespace-nowrap py-1 md:px-1.5 primary-btn rounded-2xl border border-gray-300 hover:bg-gray-500 transition-colors`}
           >
             Clear Filter
           </button>
@@ -38,6 +68,9 @@ const JobFilter = () => {
             {/* Title Filter (No Label) */}
             <div className="w-full flex flex-col items-start">
               <input
+                name="title"
+                value={formData.title}
+                onChange={handleInputChange}
                 className="w-full h-9 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 type="text"
                 placeholder="Filter by title, companies, expertise..."
@@ -54,6 +87,9 @@ const JobFilter = () => {
               </label>
               <input
                 className="w-full h-9 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                name="category"
+                value={formData.category}
+                onChange={handleInputChange}
                 name="category"
                 type="text"
                 placeholder="e.g. Design, Development"
@@ -72,6 +108,9 @@ const JobFilter = () => {
                 className="w-full h-9 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 name="country"
                 type="text"
+                  value={formData.country}
+                onChange={handleInputChange}
+                onChange={handleInputChange}
                 placeholder="e.g. United States, Remote"
               />
             </div>
@@ -89,6 +128,8 @@ const JobFilter = () => {
                 name="salary"
                 type="text"
                 placeholder="e.g. $50k - $100k"
+                value={formData.salary}
+                onChange={handleInputChange}
               />
             </div>
 
@@ -103,6 +144,8 @@ const JobFilter = () => {
               <input
                 className="w-full h-9 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 name="skills"
+                value={formData.skills}
+                onChange={handleInputChange}
                 type="text"
                 placeholder="e.g. React, Node.js"
               />
@@ -110,7 +153,9 @@ const JobFilter = () => {
 
             {/* Submit Button */}
             <div className="pt-2 w-full text-center">
-              <button className="secondary-btn w-[50%] px-6 py-1 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors">
+              <button 
+              type="submit"
+              className="secondary-btn w-[50%] px-6 py-1 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors">
                 Apply Filters
               </button>
             </div>
