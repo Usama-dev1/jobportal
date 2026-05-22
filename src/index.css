@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@tailwind utilities;
+/* =========================
+   1. DESIGN TOKENS (LIGHT)
+========================= */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #532a21;
+  --secondary: #fff6e9;
+  --secondary-orange: #ff871a;
+  --primary-hover: #1d4ed8;
+  --border: #d1d5db;
+  --radius: 12px;
+  --font-main: Arial, Helvetica, sans-serif;
+  --container: 1500px;
+  /*
+  testing colors 
+  --remotive-orange-rgb: 255, 135, 26;
+  --remotive-sand: #fed294;
+  --remotive-sand-light: #ffedd2;
+  --remotive-blue: #167eef;
+  --remotive-sky: #89c2ff;
+  --remotive-red: #ff525f;
+  --remotive-pink: #fe949a;
+  --remotive-black: #000000;
+  --remotive-white: #ffffff;
+  --remotive-gray: #b58c83; */
+}
+
+/* =========================
+   2. DARK MODE
+========================= */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+    --secondary: #1a1a1a;
+    --border: #333333;
+  }
+} */
+
+/* =========================
+   3. EXPOSE TO TAILWIND
+========================= */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-secondary-orange: var(--secondary-orange);
+  --color-border: var(--border);
+  --font-sans: var(--font-main);
+  --radius-main: var(--radius);
+}
+
+/* =========================
+   4. GLOBAL BASE STYLES
+========================= */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   5. LAYOUT UTILITIES
+========================= */
+
+/* Center container */
+@utility container-main {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+/* =========================
+   6. CARD COMPONENT
+========================= */
+@utility card {
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+/* =========================
+   7. BUTTON COMPONENT
+========================= */
+@utility btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* secondary button */
+@utility btn-outline {
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground);
+  cursor: pointer;
+}
+@utility shadow-bottom {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@utility primary-btn {
+  @apply bg-transparent text-primary border border-primary
+         rounded-lg px-4 py-2 font-bold transition duration-150 
+         ease-in-out hover:bg-primary hover:text-white;
+}
+@utility secondary-btn {
+  @apply text-primary border-none
+         rounded-lg px-4 py-2 font-bold transition duration-150 
+         ease-in-out bg-secondary-orange hover:text-secondary-orange hover:bg-primary;
+}
