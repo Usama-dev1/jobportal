@@ -1,5 +1,4 @@
-
-const JobListFilter = () => {
+const JobListFilter = ({ numJobs, sortBy, setSortBy }) => {
   return (
     <div className="px-4 space-y-4">
       {/* Header with timestamp */}
@@ -13,9 +12,17 @@ const JobListFilter = () => {
 
       {/* Stats and Filter Row */}
       <div className="flex justify-between items-center">
-        <span className="text-sm font-semibold text-gray-700">Jobs 358</span>
-        <select className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
-          <option value="newest">Newest</option>
+        <span className="text-sm font-semibold text-gray-700">
+          Total Jobs:{Number(numJobs)}{" "}
+        </span>
+        <select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
+          className="px-3 py-1.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          <option value="newest" disabled>
+            Recent
+          </option>
           <option value="latest">Latest</option>
           <option value="oldest">Oldest</option>
         </select>
