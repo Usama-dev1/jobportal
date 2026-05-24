@@ -9,6 +9,7 @@
   --primary: #532a21;
   --secondary: #fff6e9;
   --secondary-orange: #ff871a;
+  --secondary-sand: #fed294;
   --primary-hover: #1d4ed8;
   --border: #d1d5db;
   --radius: 12px;
@@ -49,6 +50,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-secondary-orange: var(--secondary-orange);
+  --color-secondary-sand: var(--secondary-sand);
   --color-border: var(--border);
   --font-sans: var(--font-main);
   --radius-main: var(--radius);

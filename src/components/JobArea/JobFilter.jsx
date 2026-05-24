@@ -35,7 +35,7 @@ const JobFilter = ({ setFilterData }) => {
     setFiltered(false);
   };
   return (
-    <div className="relative container-main bg-background w-full py-2">
+    <div className="relative bg-background w-full py-2">
       <form
         onSubmit={handleSubmit}
         className="sticky top-15 overflow-y-auto bg-white flex flex-col py-1 justify-center items-center px-4 space-y-1 max-w-xl mx-auto rounded-lg shadow-sm"
@@ -68,7 +68,7 @@ const JobFilter = ({ setFilterData }) => {
 
         {/* Toggled Form Inputs Container */}
         {isFilterOpen && (
-          <div className="w-full flex flex-col justify-center items-center space-y-6 animate-fadeIn">
+          <div className="w-full flex flex-col justify-center items-center space-y-2 animate-fadeIn">
             {/* Title Filter (No Label) */}
             <div className="w-full flex flex-col items-start">
               <input
@@ -118,7 +118,7 @@ const JobFilter = ({ setFilterData }) => {
             </div>
 
             {/* Salary Range */}
-            <div className="w-full flex flex-col items-start space-y-2">
+            <div className="w-full flex flex-col items-start space-y-1">
               {/* Label and Dynamic Value */}
               <div className="w-full flex justify-between items-center">
                 <label
@@ -127,7 +127,7 @@ const JobFilter = ({ setFilterData }) => {
                 >
                   Min Salary
                 </label>
-                <span className="text-sm font-bold text-orange-500 bg-orange-50 px-2 py-1 rounded-md">
+                <span className="text-sm font-bold text-orange-500 bg-orange-50 px-2 rounded-md">
                   ${formData.salary || 1000}
                 </span>
               </div>
@@ -176,9 +176,9 @@ const JobFilter = ({ setFilterData }) => {
               <button
                 type="submit"
                 onClick={() =>
-                  filtered ? alert("Clear the filter after for new search") : ""
+                  filtered ? alert("Clear the filter for new search") : ""
                 }
-                className="secondary-btn w-[50%] px-6 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors"
+                className="secondary-btn w-[50%] flex-nowrap px-4 py-1 bg-orange-500 text-white font-light text-sm rounded-md hover:bg-orange-600 transition-colors"
               >
                 {filtered ? "Filter Applied" : "Apply Filters"}
               </button>

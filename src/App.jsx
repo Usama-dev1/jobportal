@@ -1,19 +1,20 @@
-import HeroArea from "./components/HeroArea"
-import JobSection from "./components/JobArea/JobSection"
-import Navbar from "./components/Navbar"
+import Footer from "./components/Footer";
+import HeroArea from "./components/HeroArea";
+import JobSection from "./components/JobArea/JobSection";
+import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <>
-    <Navbar/>
-      <div className="w-full container-main mx-auto"> 
-          <main className="container-main">
-            <HeroArea/>
-            <JobSection/>
-          </main>
-        </div>
-    </>       
-    
-  )
-}
+      <Navbar />
+      <div className="w-full container-main mx-auto">
+        <main className="container-main">
+          <HeroArea />
+          <JobSection />
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
+};
 
-export default App
+export default App;
