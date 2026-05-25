@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <div className="w-full bg-secondary">
-      <div className="container-main mx-auto">
+    <div className="container-main mx-auto">
+      <div className="w-full bg-secondary">
         {/* Footer top */}
-        <div className="w-full py-10 gap-8 grid grid-cols-1 sm:grid-cols-3  px-4">
+        <div className="w-full py-10 gap-8 grid grid-cols-1 sm:grid-cols-3 px-6">
           {/* Column 1 - RemoteJobs */}
           <div className="flex flex-col items-start justify-start gap-3 w-full">
             <h2 className="text-primary font-bold text-lg">RemoteJobs</h2>
@@ -52,7 +52,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-primary hover:underline transition-colors"
                 >
-                  Join Remotive
+                  Join RemoteJobs
                 </a>
               </li>
               <li>
@@ -91,7 +91,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-primary hover:underline transition-colors"
                 >
-                  Why Remotive?
+                  Why RemoteJobs?
                 </a>
               </li>
               <li>
@@ -124,7 +124,7 @@ const Footer = () => {
 
         {/* Footer bottom */}
         <div className="w-full border-t border-gray-200 py-4">
-          <ul className="w-full flex flex-wrap justify-center items-center gap-6 text-sm text-gray-500">
+          <ul className="w-full flex gap-2 justify-center items-center text-[clamp(10px,1vw,12px)] text-gray-500">
             <li>
               <a href="#" className="hover:text-primary transition-colors">
                 Facebook
