@@ -13,7 +13,7 @@ const Footer = () => {
                   href="#"
                   className="hover:text-primary hover:underline transition-colors"
                 >
-                  Remotive Affiliate
+                  RemoteJobs Affiliate
                 </a>
               </li>
               <li>
