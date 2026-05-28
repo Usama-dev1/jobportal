@@ -4,7 +4,7 @@ import { data } from "../util/data";
 const HeroArea = () => {
   const jobsCount = data.jobs.length; // Example job count, you can replace it with dynamic data if needed
   return (
-    <div className="container-main w-full flex flex-col items-center justify-center text-center space-y-6">
+    <div className="container-main flex flex-col items-center justify-center text-center space-y-6">
       <div className="w-full flex flex-col items-center justify-center space-y-8 bg-secondary p-10">
         <h2 className="w-full text-xl md:text-4xl text-primary flex text-center sm:text-start justify-center sm:justify-start gap-2">
           {" "}

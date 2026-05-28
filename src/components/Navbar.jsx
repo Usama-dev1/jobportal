@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { SquareMenu, X } from "lucide-react";
+import { NavLink } from "react-router";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,10 +18,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 ${isScrolled ? "shadow-bottom" : ""}  bottom-0 z-50  ${isScrolled ? "bg-white" : "bg-secondary"}   px-2 container-main flex justify-between items-center py-2`}
+      className={`sticky top-0 ${isScrolled ? "shadow-bottom bg-white" : "bg-secondary"}  bottom-0 z-50 px-2 container-main flex justify-between items-center py-2`}
     >
       <div className="text-3xl text-primary font-extrabold font-sans">
-        RemoteJobs
+        <NavLink to="/">RemoteJobs</NavLink>
       </div>
       <div className="hidden md:flex space-x-4">
         <button className="hidden md:flex secondary-btn">

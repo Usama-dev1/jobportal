@@ -1,18 +1,20 @@
-import Footer from "./components/Footer";
-import HeroArea from "./components/HeroArea";
-import JobSection from "./components/JobArea/JobSection";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router";
+import MainLayout from "./layouts/MainLayout";
+import HomePage from "./pages/HomePage";
+import FilterPage from "./pages/FilterPage";
+import JobDetailsPage from "./pages/JobDetailsPage";
 const App = () => {
   return (
     <>
-      <Navbar />
-      <div className="w-full container-main mx-auto">
-        <main className="container-main">
-          <HeroArea />
-          <JobSection />
-        </main>
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="jobs" element={<FilterPage />} />
+            <Route path="job/:id" element={<JobDetailsPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

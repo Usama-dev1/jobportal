@@ -10,6 +10,7 @@
   --secondary: #fff6e9;
   --secondary-orange: #ff871a;
   --secondary-sand: #fed294;
+  --secondary-off-white: #fff6e9;
   --primary-hover: #1d4ed8;
   --border: #d1d5db;
   --radius: 12px;
@@ -51,6 +52,7 @@
   --color-secondary: var(--secondary);
   --color-secondary-orange: var(--secondary-orange);
   --color-secondary-sand: var(--secondary-sand);
+  --color-secondary-off-white: var(--secondary-off-white);
   --color-border: var(--border);
   --font-sans: var(--font-main);
   --radius-main: var(--radius);
@@ -117,6 +119,11 @@ body {
   @apply bg-transparent text-primary border border-primary
          rounded-lg px-4 py-2 font-bold transition duration-150 
          ease-in-out hover:bg-primary hover:text-white;
+}
+@utility primary-dark-btn {
+  @apply bg-primary text-white border border-primary text-sm
+         rounded-lg px-4 py-2 transition duration-150 
+         ease-in-out hover:bg-secondary-orange hover:text-primary;
 }
 @utility secondary-btn {
   @apply text-primary border-none

@@ -95,7 +95,7 @@ const JobFilter = ({ setFilterData }) => {
                 value={formData.jobType}
                 onChange={handleInputChange}
                 type="text"
-                placeholder="e.g. Design, Development"
+                placeholder="e.g remote,contract"
               />
             </div>
 
