@@ -1,6 +1,6 @@
 import { Flame } from "lucide-react";
 import { data } from "../util/data";
-
+import { Link } from "react-router";
 const HeroArea = () => {
   const jobsCount = data.jobs.length; // Example job count, you can replace it with dynamic data if needed
   return (
@@ -18,12 +18,16 @@ const HeroArea = () => {
           For your future find your dream job #1 site for remote jobs
         </p>
         <div className="w-full flex items-center justify-center  sm:justify-start gap-4">
-          <button className="primary-btn self-start text-xs sm:text-lg w-30 text-nowrap sm:w-40 sm:h-12">
-            Explore Jobs
-          </button>
-          <button className="secondary-btn btn-outline text-xs self-start w-30  text-nowrap sm:text-lg sm:w-40 sm:h-12 ">
-            Post Jobs
-          </button>
+          <Link to="/jobs">
+            <button className="primary-btn self-start text-xs sm:text-lg w-30 text-nowrap sm:w-40 sm:h-12">
+              Explore Jobs
+            </button>
+          </Link>
+          <Link to="job/post">
+            <button className="secondary-btn btn-outline text-xs self-start w-30  text-nowrap sm:text-lg sm:w-40 sm:h-12 ">
+              Post Jobs
+            </button>
+          </Link>
         </div>
       </div>
     </div>
